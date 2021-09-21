@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block customer_registration %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-4 m-auto">
+            
+            <form action="" method="post">
+                <h3>Customer Registration</h3>
+                {% csrf_token %}
+                {{form}}
+                <input type="submit" value="Submit">
+            </form>
+       
+
+            {% for m in messages %}
+            <div class="btn btn-success">
+                {{m}}
+            </div>
+            {% endfor %}
+        
+        </div>
+    </div>
+</div>
+{% endblock %}
