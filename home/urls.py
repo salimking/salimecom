@@ -11,6 +11,10 @@ urlpatterns = [
     path('logout',views.logouts,name='logout'),
 
     path('customer',views.customer,name='customer'),
+    # path('customer',views.customer,name='customer'),
+
+    path('s',views.search,name='search'),
+
 
 
 ]

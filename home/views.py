@@ -54,3 +54,18 @@ def  customer(request):
     con = {'form':form
     }    
     return render(request,'customer.html',con)   
+
+
+def search(request):
+    if request.method=="POST":
+        s=request.POST['s']
+        n=request.POST['n']
+        v=s.split(',')
+        for i in v:
+            if i==n:
+                return HttpResponse("True")
+            else:
+                return HttpResponse("You r gay")
+
+
+    return render(request,'s.html')    

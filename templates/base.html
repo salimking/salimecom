@@ -16,9 +16,9 @@
     
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico'%}">
 
-  
-        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css'%}">
-        <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
         <link rel="stylesheet" href="{% static 'assets/css/flaticon.css'%}">
         <link rel="stylesheet" href="{% static 'assets/css/slicknav.css'%}">
         <link rel="stylesheet" href="{% static 'assets/css/animate.min.css'%}">
@@ -28,6 +28,8 @@
         <link rel="stylesheet" href="{% static 'assets/css/slick.css'%}">
         <link rel="stylesheet" href="{% static 'assets/css/nice-select.css'%}">
         <link rel="stylesheet" href="{% static 'assets/css/style.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/css/mm.css'%}">
+
         <link rel="stylesheet" type="text/css" href="{% static 'assets/css/util.css'%}">
 	    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/main.css'%}">
 </head>
@@ -108,28 +110,18 @@
                                     <nav>                                                
                                         <ul id="navigation">                                                                                                                                     
                                             <li><a href="/">Home</a></li>
-                                            <li><a href="Catagori.html">Catagori</a></li>
-                                            <li class="hot"><a href="#">Latest</a>
+                                            
+
+
+                                           
+                                        <li class="hot"><a href="{% url 'product:product' %}">Latest</a></li>
+                                      <li><a href="{% url 'product:product' %}">Shop</a> </li>
+                                            <li><a href="{% url 'product:category' %}">Catagory</a>
                                                 <ul class="submenu">
-                                                    <li><a href="product_list.html"> Product list</a></li>
-                                                    <li><a href="{% url 'product:product' %}"> Product Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="blog.html">Blog</a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="single-blog.html">Blog Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Pages</a>
-                                                <ul class="submenu">
-                                                    <li><a href="{% url  'home:login' %}">Login</a></li>
-                                                    <li><a href="{% url 'cart:cart' %}">Card</a></li>
-                                                    <li><a href="elements.html">Element</a></li>
-                                                    <li><a href="about.html">About</a></li>
-                                                    <li><a href="confirmation.html">Confirmation</a></li>
-                                                    <li><a href="{% url 'cart:cart' %}">Shopping Cart</a></li>
-                                                    <li><a href="checkout.html">Product Checkout</a></li>
+                                                    <li><a href="{% url  'home:login' %}">Man</a></li>
+                                                    <li><a href="{% url 'cart:cart' %}">Woman</a></li>
+                                                    <li><a href="elements.html">New</a></li>
+                                                  
                                                 </ul>
                                             </li>
                                             <li><a href="contact.html">Contact</a></li>
@@ -147,11 +139,7 @@
                                             </div>
                                         </div>
                                      </li>
-                                    <li class=" d-none d-xl-block">
-                                        <div class="favorit-items">
-                                            <i class="far fa-heart"></i>
-                                        </div>
-                                    </li>
+                                   
                                     <li>
                                      {% if  request.user.is_authenticated %}
 
@@ -160,7 +148,7 @@
                                             <a href="{% url 'cart:cart' %}"><i class="fas fa-shopping-cart"></i></a>
                                             
                                         </div>
-                                        <li class="d-none d-lg-block"> <a href="{% url 'home:logout' %}" class="btn header-btn">Log out</a></li>
+                                        <li class="d-none d-lg-block"> <a href="{% url 'home:logout' %}" class="btn header-btn btn-danger">Log out</a></li>
                                    {% endif %}
                                         
                                     </li>
@@ -195,6 +183,21 @@
 {% endblock %}
 {% block seller_registration %}
 {% endblock %}
+
+
+{% block cat %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
 
         <footer>
 
